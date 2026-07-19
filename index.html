@@ -1,0 +1,407 @@
+
+<title>Pritish Sachdeva</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --bg:#F5F4F0;--bg-el:#FFFFFF;--bg-sub:#ECEAE5;
+  --border:rgba(0,0,0,0.08);--border-med:rgba(0,0,0,0.12);
+  --text:#141820;--text-m:#5C6175;--text-f:#9BA0B0;
+  --accent:#8A6B1A;--accent-l:#B89020;--accent-dim:rgba(138,107,26,0.10);
+  --fd:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --fb:Georgia,'Times New Roman',serif;
+  --fm:'SF Mono','Fira Code','Monaco',monospace;
+  --r4:4px;--r8:8px;--r14:14px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0D1117;--bg-el:#161C26;--bg-sub:#1A2030;
+    --border:rgba(255,255,255,0.07);--border-med:rgba(255,255,255,0.12);
+    --text:#E8ECF4;--text-m:#7A8298;--text-f:#3E4560;
+    --accent:#C8A84B;--accent-l:#E0C068;--accent-dim:rgba(200,168,75,0.10);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1117;--bg-el:#161C26;--bg-sub:#1A2030;
+  --border:rgba(255,255,255,0.07);--border-med:rgba(255,255,255,0.12);
+  --text:#E8ECF4;--text-m:#7A8298;--text-f:#3E4560;
+  --accent:#C8A84B;--accent-l:#E0C068;--accent-dim:rgba(200,168,75,0.10);
+}
+:root[data-theme="light"]{
+  --bg:#F5F4F0;--bg-el:#FFFFFF;--bg-sub:#ECEAE5;
+  --border:rgba(0,0,0,0.08);--border-med:rgba(0,0,0,0.12);
+  --text:#141820;--text-m:#5C6175;--text-f:#9BA0B0;
+  --accent:#8A6B1A;--accent-l:#B89020;--accent-dim:rgba(138,107,26,0.10);
+}
+
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2.5rem;background:var(--bg);border-bottom:1px solid transparent;transition:border-color .3s;font-family:var(--fd);}
+nav.scrolled{border-bottom-color:var(--border);}
+.nav-logo{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:1.75rem;list-style:none;align-items:center;}
+.nav-links a{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--text-m);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--text-m);padding:.28rem .55rem;border-radius:var(--r4);cursor:pointer;font-size:.72rem;font-family:var(--fd);transition:all .2s;letter-spacing:.04em;}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent);}
+.theme-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 2.5rem 5rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;right:-3%;top:50%;transform:translateY(-50%);font-family:var(--fd);font-size:clamp(18rem,32vw,42rem);font-weight:800;color:var(--accent);opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em;}
+.eyebrow{font-family:var(--fd);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.4rem;display:flex;align-items:center;gap:.7rem;}
+.eyebrow::before{content:'';display:inline-block;width:2rem;height:1px;background:var(--accent);}
+.hero-name{font-family:var(--fd);font-size:clamp(3.2rem,9.5vw,8rem);font-weight:800;line-height:.92;letter-spacing:-.035em;color:var(--text);margin-bottom:1.8rem;text-wrap:balance;}
+.hero-name em{color:var(--accent);font-style:normal;}
+.hero-tagline{font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--text-m);max-width:50ch;margin-bottom:3rem;line-height:1.75;font-family:var(--fb);}
+.stats-row{display:flex;gap:2.5rem;flex-wrap:wrap;align-items:flex-end;}
+.stat{font-family:var(--fd);}
+.stat-n{font-size:2.4rem;font-weight:800;line-height:1;color:var(--text);letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+.stat-n sup{font-size:1rem;color:var(--accent);font-weight:700;vertical-align:super;}
+.stat-l{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-f);margin-top:.3rem;}
+.stat-sep{width:1px;height:2.5rem;background:var(--border);align-self:center;}
+
+/* SECTIONS */
+.wrap{max-width:1080px;margin:0 auto;padding:5.5rem 2.5rem;}
+.sec-rule{border:none;border-top:1px solid var(--border);margin:0 2.5rem;}
+.sec-eye{font-family:var(--fd);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.65rem;margin-bottom:.9rem;}
+.sec-eye::before{content:'';display:inline-block;width:1.4rem;height:1px;background:var(--accent);}
+.sec-h{font-family:var(--fd);font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-.025em;color:var(--text);margin-bottom:.9rem;text-wrap:balance;line-height:1.12;}
+.sec-sub{font-size:1rem;color:var(--text-m);max-width:54ch;margin-bottom:2.8rem;line-height:1.7;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start;}
+.bio{font-size:1.05rem;line-height:1.82;color:var(--text-m);}
+.bio strong{color:var(--text);font-weight:600;}
+.bio em{font-style:italic;color:var(--accent);}
+.facts{display:flex;flex-direction:column;}
+.fact{display:flex;justify-content:space-between;align-items:baseline;padding:.75rem 0;border-bottom:1px solid var(--border);font-family:var(--fd);}
+.fact:first-child{border-top:1px solid var(--border);}
+.fl{font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-f);}
+.fv{font-size:.85rem;font-weight:500;color:var(--text);text-align:right;}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.25rem;}
+.card{background:var(--bg-el);border:1px solid var(--border);border-radius:var(--r14);padding:1.75rem;transition:transform .22s,border-color .22s,box-shadow .22s;position:relative;overflow:hidden;}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .22s;}
+.card:hover{transform:translateY(-4px);border-color:rgba(200,168,75,.35);box-shadow:0 12px 40px rgba(0,0,0,.12);}
+.card:hover::after{opacity:1;}
+.badge{display:inline-block;font-family:var(--fd);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);padding:.22rem .6rem;border-radius:99px;margin-bottom:1.2rem;}
+.card-rank{font-family:var(--fd);font-size:3rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.03em;margin-bottom:.5rem;}
+.card-rank small{font-size:1rem;color:var(--accent);font-weight:700;}
+.card-t{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.5rem;}
+.card-d{font-size:.85rem;color:var(--text-m);line-height:1.65;}
+.card-loc{margin-top:1.1rem;font-family:var(--fd);font-size:.67rem;letter-spacing:.07em;text-transform:uppercase;color:var(--text-f);}
+
+/* GRADES */
+.grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1rem;}
+.gc{background:var(--bg-el);border:1px solid var(--border);border-radius:var(--r8);padding:1.4rem 1.2rem;text-align:center;font-family:var(--fd);transition:border-color .2s;}
+.gc:hover{border-color:var(--border-med);}
+.gn{font-size:3rem;font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:.4rem;font-variant-numeric:tabular-nums;}
+.g7{color:#52B77A;}.g6{color:var(--accent-l);}.g5{color:#8896AE;}.g4{color:#6A7185;}
+.gs{font-size:.78rem;color:var(--text-m);line-height:1.4;}
+.gl{font-size:.62rem;color:var(--text-f);letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem;}
+.ee-strip{margin-top:1.5rem;padding:1.1rem 1.4rem;background:var(--accent-dim);border:1px solid var(--border);border-radius:var(--r8);font-family:var(--fd);font-size:.82rem;color:var(--text-m);display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;}
+.ee-label{color:var(--accent);font-weight:700;font-size:.8rem;}
+.ee-year{margin-left:auto;color:var(--text-f);font-size:.7rem;font-family:var(--fm);}
+
+/* SKILLS */
+.skills{display:flex;flex-wrap:wrap;gap:.65rem;}
+.stag{font-family:var(--fd);font-size:.78rem;padding:.38rem .95rem;border:1px solid var(--border);border-radius:99px;color:var(--text-m);background:var(--bg-el);letter-spacing:.02em;transition:all .2s;cursor:default;}
+.stag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);}
+
+/* ACTIVITIES */
+.act-list{display:flex;flex-direction:column;}
+.act{display:flex;align-items:flex-start;gap:1.25rem;padding:1.4rem 0;border-bottom:1px solid var(--border);}
+.act:last-child{border-bottom:none;}
+.act-icon{width:2.4rem;height:2.4rem;border-radius:var(--r8);background:var(--accent-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+.act-n{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.2rem;}
+.act-d{font-size:.84rem;color:var(--text-m);line-height:1.6;}
+.act-y{font-family:var(--fm);font-size:.67rem;color:var(--text-f);letter-spacing:.05em;margin-top:.3rem;}
+
+/* TABLE */
+.targets-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.targets-table{width:100%;min-width:720px;border-collapse:collapse;font-family:var(--fd);font-size:.82rem;}
+.targets-table thead tr{border-bottom:2px solid var(--border-med);}
+.targets-table th{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-f);padding:.7rem 1rem;text-align:left;font-weight:600;white-space:nowrap;}
+.targets-table td{padding:.85rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-m);line-height:1.4;}
+.targets-table tr:last-child td{border-bottom:none;}
+.targets-table tbody tr:hover td{background:var(--bg-sub);}
+.t-num{color:var(--text-f);font-size:.7rem;font-variant-numeric:tabular-nums;}
+.t-uni{color:var(--text);font-weight:600;font-size:.85rem;}
+.t-prog{color:var(--text-m);font-size:.8rem;margin-top:.15rem;}
+.fit-reach{color:#E07B4A;background:rgba(224,123,74,.1);padding:.15rem .5rem;border-radius:99px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+.fit-target{color:var(--accent);background:var(--accent-dim);padding:.15rem .5rem;border-radius:99px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+.fit-safe{color:#52B77A;background:rgba(82,183,122,.1);padding:.15rem .5rem;border-radius:99px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+
+/* CONTACT */
+.contact-band{background:var(--bg-el);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.contact-inner{max-width:1080px;margin:0 auto;padding:5.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap;}
+.contact-h{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;letter-spacing:-.02em;color:var(--text);margin-bottom:.4rem;}
+.contact-sub{color:var(--text-m);font-size:.95rem;}
+.clinks{display:flex;flex-direction:column;gap:.8rem;}
+.clink{display:flex;align-items:center;gap:.8rem;font-family:var(--fd);font-size:.84rem;color:var(--text-m);text-decoration:none;transition:color .2s;}
+.clink:hover{color:var(--accent);}
+.clink-ic{width:2rem;height:2rem;border:1px solid var(--border);border-radius:var(--r4);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;transition:border-color .2s;}
+.clink:hover .clink-ic{border-color:var(--accent);}
+
+footer{padding:1.75rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-family:var(--fd);font-size:.68rem;color:var(--text-f);letter-spacing:.05em;}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
+.rv.on{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}.card{transition:none;}}
+
+/* RESPONSIVE */
+@media(max-width:780px){
+  nav{padding:.8rem 1.2rem;}
+  .nav-links{display:none;}
+  .hero{padding:6.5rem 1.2rem 4rem;}
+  .hero-bg{display:none;}
+  .wrap{padding:4rem 1.2rem;}
+  .sec-rule{margin:0 1.2rem;}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .contact-inner{padding:4rem 1.2rem;}
+  footer{padding:1.5rem 1.2rem;}
+  .stats-row{gap:1.5rem;}
+  .stat-sep{display:none;}
+}
+</style>
+
+<nav id="nav">
+  <a href="#top" class="nav-logo">Pritish <span>Sachdeva</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#academics">Academics</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#targets">Universities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9728; / &#9790;</button>
+</nav>
+
+<div class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">3</div>
+  <div class="eyebrow">IB Diploma &middot; Shiv Nadar School, Noida &middot; Class of 2027</div>
+  <h1 class="hero-name">Pritish<br><em>Sachdeva</em></h1>
+  <p class="hero-tagline">Entrepreneur, technologist, and IB student building at the intersection of business and code. Co-founder of an active tech company. Top&nbsp;10 at an international product challenge in Prague.</p>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-n">3<sup>rd</sup></div><div class="stat-l">JA Czech National</div></div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat"><div class="stat-n">Top&thinsp;10</div><div class="stat-l">BATA Global Challenge</div></div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat"><div class="stat-n">7<sup>/7</sup></div><div class="stat-l">Computer Science IB</div></div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat"><div class="stat-n">91<sup>%</sup></div><div class="stat-l">Grade 10 CBSE</div></div>
+  </div>
+</div>
+
+<hr class="sec-rule">
+
+<div class="wrap" id="about">
+  <div class="sec-eye rv">About</div>
+  <div class="about-grid rv">
+    <div>
+      <h2 class="sec-h">Builder.<br>Thinker.<br>Competitor.</h2>
+      <p class="bio">
+        I am a DP1 student at Shiv Nadar School, Noida pursuing the IB Diploma with subjects in <strong>Business Management, Economics, Computer Science,</strong> and Mathematics. While most students were studying business from textbooks, I was <em>co-founding Velin</em> &mdash; a student tech company that placed 3rd nationally in the Czech Republic and remains active today.
+        <br><br>
+        I think in systems. Whether debugging Python, building a financial model for an investor pitch, or reading a badminton opponent&rsquo;s pattern &mdash; the instinct is always the same: understand the structure, find the edge, execute under pressure. That approach has taken me to Prague twice before turning 18.
+      </p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="fl">Currently</span><span class="fv">IB Diploma Year 1</span></div>
+      <div class="fact"><span class="fl">School</span><span class="fv">Shiv Nadar School, Noida</span></div>
+      <div class="fact"><span class="fl">Location</span><span class="fv">Delhi NCR, India</span></div>
+      <div class="fact"><span class="fl">Grade 10</span><span class="fv">91% &mdash; CBSE</span></div>
+      <div class="fact"><span class="fl">DP1 Score</span><span class="fv">35 / 42 (Term 2)</span></div>
+      <div class="fact"><span class="fl">Languages</span><span class="fv">English &middot; Hindi</span></div>
+      <div class="fact"><span class="fl">Sport</span><span class="fv">Badminton &mdash; State Level, UP</span></div>
+      <div class="fact"><span class="fl">University Entry</span><span class="fv">September 2027</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="sec-rule">
+
+<div class="wrap" id="ventures">
+  <div class="sec-eye rv">Ventures &amp; Competitions</div>
+  <h2 class="sec-h rv">Real results,<br>before university.</h2>
+  <p class="sec-sub rv">Most applicants describe passion for business. I built a company, competed across Europe, and came back with proof.</p>
+  <div class="cards">
+    <div class="card rv">
+      <div class="badge">Co-Founder &middot; Active</div>
+      <div class="card-rank">3<small>rd</small></div>
+      <div class="card-t">Velin &mdash; JA Czech National Competition</div>
+      <div class="card-d">Co-founded Velin, a student-led tech company through the Junior Achievement programme. Secured 3rd place nationally in the JA Czech Company Competition. The company remains operationally active post-competition &mdash; a rare outcome for a student venture. Gained hands-on experience in business strategy, financial planning, product development, and team leadership.</div>
+      <div class="card-loc">&#128205; Czech Republic &middot; 2025&ndash;Present</div>
+    </div>
+    <div class="card rv">
+      <div class="badge">International &middot; Product Innovation</div>
+      <div class="card-rank">Top<small> 10</small></div>
+      <div class="card-t">BATA Shoe Innovation Challenge, Prague</div>
+      <div class="card-d">Ranked Top 10 globally at an international product innovation challenge hosted by BATA &mdash; one of the world&rsquo;s largest footwear brands. Developed a commercially viable concept incorporating market research, cost analysis, and an investor-style pitch delivered in Prague to an international panel.</div>
+      <div class="card-loc">&#128205; Prague, Czech Republic &middot; 2025</div>
+    </div>
+    <div class="card rv">
+      <div class="badge">Cross-National &middot; Applied Innovation</div>
+      <div class="card-rank" style="font-size:1.8rem;letter-spacing:-.02em;margin-bottom:.6rem;">Liberec<br>Innovation Camp</div>
+      <div class="card-t">Czech Republic Innovation Programme</div>
+      <div class="card-d">Participated in a cross-national innovation camp focused on applied problem-solving and collaborative product design with international peers from multiple countries. Developed rapid prototyping skills, intercultural communication, and the ability to pitch under time pressure alongside students from across Europe.</div>
+      <div class="card-loc">&#128205; Liberec, Czech Republic &middot; 2025</div>
+    </div>
+  </div>
+</div>
+
+<hr class="sec-rule">
+
+<div class="wrap" id="academics">
+  <div class="sec-eye rv">Academics</div>
+  <h2 class="sec-h rv">IB Diploma Profile</h2>
+  <p class="sec-sub rv">Quantitative strength across technology, business, and language. IB grades run 1&ndash;7; 7 is maximum.</p>
+  <div class="grades rv">
+    <div class="gc"><div class="gn g7">7</div><div class="gs">Computer Science</div><div class="gl">SL</div></div>
+    <div class="gc"><div class="gn g7">7</div><div class="gs">Hindi B</div><div class="gl">SL</div></div>
+    <div class="gc"><div class="gn g6">6</div><div class="gs">Business Management</div><div class="gl">HL</div></div>
+    <div class="gc"><div class="gn g6">6</div><div class="gs">Mathematics AA</div><div class="gl">HL</div></div>
+    <div class="gc"><div class="gn g5">5</div><div class="gs">Economics</div><div class="gl">HL</div></div>
+    <div class="gc"><div class="gn g4">4</div><div class="gs">English Lang &amp; Lit</div><div class="gl">SL</div></div>
+  </div>
+  <div class="ee-strip rv">
+    <span class="ee-label">Extended Essay</span>
+    <span>&middot;</span>
+    <span>Economics &mdash; supervised by Mr. Dwayne Fernandes &mdash; On track (Grade O)</span>
+    <span class="ee-year">DP1 &middot; 2026</span>
+  </div>
+</div>
+
+<hr class="sec-rule">
+
+<div class="wrap">
+  <div class="sec-eye rv">Skills</div>
+  <h2 class="sec-h rv">What I bring</h2>
+  <div class="skills rv">
+    <span class="stag">Python</span>
+    <span class="stag">Business Strategy</span>
+    <span class="stag">Market Research</span>
+    <span class="stag">Financial Modelling</span>
+    <span class="stag">Product Development</span>
+    <span class="stag">Critical Thinking</span>
+    <span class="stag">Investor Pitching</span>
+    <span class="stag">Public Speaking</span>
+    <span class="stag">Team Leadership</span>
+    <span class="stag">Cross-Cultural Collaboration</span>
+    <span class="stag">Data Analysis</span>
+    <span class="stag">Logical Problem-Solving</span>
+  </div>
+</div>
+
+<hr class="sec-rule">
+
+<div class="wrap" id="activities">
+  <div class="sec-eye rv">Activities &amp; CAS</div>
+  <h2 class="sec-h rv">Beyond the classroom</h2>
+  <div class="act-list">
+    <div class="act rv">
+      <div class="act-icon">&#127992;</div>
+      <div><div class="act-n">State-Level Badminton &mdash; Uttar Pradesh</div><div class="act-d">Represented Uttar Pradesh at state-level competitions. Demonstrates competitive discipline, resilience under pressure, and sustained physical commitment over years of dedicated training.</div><div class="act-y">2025</div></div>
+    </div>
+    <div class="act rv">
+      <div class="act-icon">&#128161;</div>
+      <div><div class="act-n">Enterprise Club</div><div class="act-d">Active member focused on innovation, entrepreneurship, and community-oriented thinking. Regular participation in ideation sessions and business challenge workshops at school level.</div><div class="act-y">2025&ndash;Present</div></div>
+    </div>
+    <div class="act rv">
+      <div class="act-icon">&#127758;</div>
+      <div><div class="act-n">Model United Nations &amp; International Societies</div><div class="act-d">Participated in MUN and international student societies &mdash; building research depth, structured argumentation, public speaking, and cross-cultural negotiation experience.</div><div class="act-y">2025&ndash;Present</div></div>
+    </div>
+    <div class="act rv">
+      <div class="act-icon">&#127807;</div>
+      <div><div class="act-n">Project Tierra &mdash; CAS Project</div><div class="act-d">Community-focused CAS (Creativity, Activity, Service) project aligned with the IB Diploma&rsquo;s ethos of global citizenship and service to others.</div><div class="act-y">2025</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="sec-rule">
+
+<div class="wrap" id="targets">
+  <div class="sec-eye rv">University Targets</div>
+  <h2 class="sec-h rv">September 2027 Entry</h2>
+  <p class="sec-sub rv">Targeting Business, Technology, and Entrepreneurship programmes across the UK, Europe, Hong Kong, and Singapore.</p>
+  <div class="targets-scroll rv">
+    <table class="targets-table">
+      <thead>
+        <tr>
+          <th>#</th><th>University &amp; Programme</th><th>Country</th><th>IB Req.</th><th>Deadline</th><th>Fit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="t-num">1</td><td><div class="t-uni">IE University</div><div class="t-prog">BBA &mdash; Bachelor of Business Administration</div></td><td>Spain</td><td>30+</td><td>Dec 2026</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">2</td><td><div class="t-uni">Singapore Management University (SMU)</div><div class="t-prog">BSc Business Management</div></td><td>Singapore</td><td>35&ndash;37</td><td>31 Mar 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">3</td><td><div class="t-uni">University of Bath</div><div class="t-prog">BSc Business Administration</div></td><td>UK</td><td>36</td><td>29 Jan 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">4</td><td><div class="t-uni">HKUST</div><div class="t-prog">BSc Business Management</div></td><td>Hong Kong</td><td>35&ndash;38</td><td>Nov 2026</td><td><span class="fit-reach">Reach</span></td></tr>
+        <tr><td class="t-num">5</td><td><div class="t-uni">Maastricht University</div><div class="t-prog">BSc International Business</div></td><td>Netherlands</td><td>30</td><td>1 May 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">6</td><td><div class="t-uni">University of Manchester</div><div class="t-prog">BSc Management</div></td><td>UK</td><td>35</td><td>29 Jan 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">7</td><td><div class="t-uni">University of Bristol</div><div class="t-prog">BSc Management</div></td><td>UK</td><td>36</td><td>29 Jan 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">8</td><td><div class="t-uni">VU Amsterdam (Vrije Universiteit)</div><div class="t-prog">BSc Business Analytics</div></td><td>Netherlands</td><td>30</td><td>1 May 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">9</td><td><div class="t-uni">University of Warwick</div><div class="t-prog">BSc Management</div></td><td>UK</td><td>38</td><td>29 Jan 2027</td><td><span class="fit-reach">Reach</span></td></tr>
+        <tr><td class="t-num">10</td><td><div class="t-uni">University of Edinburgh</div><div class="t-prog">MA Business</div></td><td>UK</td><td>37</td><td>29 Jan 2027</td><td><span class="fit-reach">Reach</span></td></tr>
+        <tr><td class="t-num">11</td><td><div class="t-uni">University of Exeter</div><div class="t-prog">BSc Business &amp; Management</div></td><td>UK</td><td>34</td><td>29 Jan 2027</td><td><span class="fit-safe">Safe&ndash;Target</span></td></tr>
+        <tr><td class="t-num">12</td><td><div class="t-uni">Copenhagen Business School</div><div class="t-prog">BSc International Business</div></td><td>Denmark</td><td>30</td><td>5 Mar 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">13</td><td><div class="t-uni">Chinese University of Hong Kong (CUHK)</div><div class="t-prog">Bachelor of Business Administration</div></td><td>Hong Kong</td><td>33&ndash;36</td><td>1 Mar 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">14</td><td><div class="t-uni">University of Amsterdam (UvA)</div><div class="t-prog">BSc Business Administration</div></td><td>Netherlands</td><td>32</td><td>15 Jan 2027</td><td><span class="fit-target">Target</span></td></tr>
+        <tr><td class="t-num">15</td><td><div class="t-uni">University of Durham</div><div class="t-prog">BA Business Management</div></td><td>UK</td><td>37</td><td>29 Jan 2027</td><td><span class="fit-reach">Reach</span></td></tr>
+        <tr><td class="t-num">16</td><td><div class="t-uni">University of Birmingham</div><div class="t-prog">BSc Business Management</div></td><td>UK</td><td>32</td><td>29 Jan 2027</td><td><span class="fit-safe">Safe</span></td></tr>
+        <tr><td class="t-num">17</td><td><div class="t-uni">University of Leeds</div><div class="t-prog">BSc Business Management</div></td><td>UK</td><td>33</td><td>29 Jan 2027</td><td><span class="fit-safe">Safe</span></td></tr>
+        <tr><td class="t-num">18</td><td><div class="t-uni">City University of Hong Kong (CityU)</div><div class="t-prog">BSc Business Administration</div></td><td>Hong Kong</td><td>30&ndash;33</td><td>31 Mar 2027</td><td><span class="fit-safe">Safe&ndash;Target</span></td></tr>
+        <tr><td class="t-num">19</td><td><div class="t-uni">Nanyang Technological University (NTU)</div><div class="t-prog">BSc Business</div></td><td>Singapore</td><td>37&ndash;40</td><td>19 Feb 2027</td><td><span class="fit-reach">Reach</span></td></tr>
+        <tr><td class="t-num">20</td><td><div class="t-uni">Loughborough University</div><div class="t-prog">BSc Business Management</div></td><td>UK</td><td>32</td><td>29 Jan 2027</td><td><span class="fit-safe">Safe</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="contact-band">
+  <div class="contact-inner" id="contact">
+    <div class="rv">
+      <div class="contact-h">Let&rsquo;s connect.</div>
+      <div class="contact-sub">Open to university conversations, internships,<br>and interesting problems worth solving.</div>
+    </div>
+    <div class="clinks rv">
+      <a href="mailto:pritishsachdeva14@gmail.com" class="clink"><span class="clink-ic">&#9993;</span>pritishsachdeva14@gmail.com</a>
+      <a href="tel:+918448222888" class="clink"><span class="clink-ic">&#9742;</span>+91 844 822 2888</a>
+      <a href="#" class="clink"><span class="clink-ic" style="font-size:.7rem;font-weight:700;">in</span>linkedin.com/in/pritishsachdeva</a>
+      <a href="#" class="clink"><span class="clink-ic">&#127760;</span>pritishsachdeva.com <span style="font-size:.7rem;color:var(--text-f);margin-left:.3rem;">(coming soon)</span></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Pritish Sachdeva &middot; IB Diploma &middot; Shiv Nadar School, Noida</span>
+  <span>Delhi NCR, India &middot; 2026</span>
+</footer>
+
+<script>
+function toggleTheme(){
+  const r=document.documentElement;
+  const cur=r.getAttribute('data-theme');
+  const isDark=cur==='dark'||(!cur&&window.matchMedia('(prefers-color-scheme:dark)').matches);
+  r.setAttribute('data-theme',isDark?'light':'dark');
+}
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50);},{passive:true});
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const siblings=e.target.closest('.cards,.grades');
+      const delay=siblings?Array.from(siblings.querySelectorAll('.rv')).indexOf(e.target)*90:0;
+      setTimeout(()=>e.target.classList.add('on'),delay);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
