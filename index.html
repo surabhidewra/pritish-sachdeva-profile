@@ -170,20 +170,6 @@ nav.scrolled{border-bottom-color:var(--border);}
 .tag{font-family:var(--fd);font-size:.76rem;padding:.3rem .8rem;border:1px solid var(--border);border-radius:99px;color:var(--text-m);transition:all .2s;cursor:default;}
 .tag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);}
 
-/* UNIVERSITY TABLE */
-.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-table{width:100%;min-width:760px;border-collapse:collapse;font-family:var(--fd);font-size:.82rem;}
-thead tr{border-bottom:2px solid var(--border-str);}
-th{font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-f);padding:.75rem 1rem;text-align:left;white-space:nowrap;}
-td{padding:.9rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-m);}
-tbody tr:last-child td{border-bottom:none;}
-tbody tr:hover td{background:var(--bg-sub);}
-.tn{color:var(--text-f);font-size:.7rem;font-variant-numeric:tabular-nums;}
-.tu{color:var(--text);font-weight:600;font-size:.85rem;}
-.tp{color:var(--text-m);font-size:.78rem;margin-top:.15rem;}
-.reach{color:#E07B4A;background:rgba(224,123,74,.1);padding:.15rem .5rem;border-radius:99px;font-size:.66rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;}
-.target{color:var(--accent);background:var(--accent-dim);padding:.15rem .5rem;border-radius:99px;font-size:.66rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;}
-.safe{color:#52B77A;background:rgba(82,183,122,.1);padding:.15rem .5rem;border-radius:99px;font-size:.66rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;}
 
 /* CONTACT */
 .contact-wrap{background:var(--bg-dark);padding:7rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
@@ -233,7 +219,7 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#academics">Academics</a></li>
-    <li><a href="#universities">Universities</a></li>
+
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9728; / &#9790;</button>
@@ -534,45 +520,6 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
         <span class="tag">Enterprise Club</span><span class="tag">Model United Nations</span><span class="tag">International Societies</span><span class="tag">Project Tierra (CAS)</span><span class="tag">Badminton</span>
       </div>
     </div>
-  </div>
-</div>
-
-<hr class="rule">
-
-<!-- UNIVERSITIES -->
-<div class="section" id="universities">
-  <div class="eye rv">University Targets</div>
-  <h2 class="sh rv">September 2027 Entry &mdash;<br>20 Target Universities</h2>
-  <p class="ssub rv">Targeting Business, Technology, and Entrepreneurship programmes across UK, Europe, Hong Kong, and Singapore. Applications open September&ndash;October 2026.</p>
-
-  <div class="tbl-wrap rv">
-    <table>
-      <thead>
-        <tr><th>#</th><th>University &amp; Programme</th><th>Country</th><th>IB Req.</th><th>Deadline</th><th>Fit</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="tn">1</td><td><div class="tu">IE University</div><div class="tp">BBA &mdash; Bachelor of Business Administration</div></td><td>Spain</td><td>30+</td><td>Dec 2026</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">2</td><td><div class="tu">Singapore Management University (SMU)</div><div class="tp">BSc Business Management</div></td><td>Singapore</td><td>35&ndash;37</td><td>31 Mar 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">3</td><td><div class="tu">University of Bath</div><div class="tp">BSc Business Administration</div></td><td>UK</td><td>36</td><td>29 Jan 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">4</td><td><div class="tu">HKUST</div><div class="tp">BSc Business Management</div></td><td>Hong Kong</td><td>35&ndash;38</td><td>Nov 2026</td><td><span class="reach">Reach</span></td></tr>
-        <tr><td class="tn">5</td><td><div class="tu">Maastricht University</div><div class="tp">BSc International Business</div></td><td>Netherlands</td><td>30</td><td>1 May 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">6</td><td><div class="tu">University of Manchester</div><div class="tp">BSc Management</div></td><td>UK</td><td>35</td><td>29 Jan 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">7</td><td><div class="tu">University of Bristol</div><div class="tp">BSc Management</div></td><td>UK</td><td>36</td><td>29 Jan 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">8</td><td><div class="tu">VU Amsterdam (Vrije Universiteit)</div><div class="tp">BSc Business Analytics</div></td><td>Netherlands</td><td>30</td><td>1 May 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">9</td><td><div class="tu">University of Warwick</div><div class="tp">BSc Management</div></td><td>UK</td><td>38</td><td>29 Jan 2027</td><td><span class="reach">Reach</span></td></tr>
-        <tr><td class="tn">10</td><td><div class="tu">University of Edinburgh</div><div class="tp">MA Business</div></td><td>UK</td><td>37</td><td>29 Jan 2027</td><td><span class="reach">Reach</span></td></tr>
-        <tr><td class="tn">11</td><td><div class="tu">University of Exeter</div><div class="tp">BSc Business &amp; Management</div></td><td>UK</td><td>34</td><td>29 Jan 2027</td><td><span class="safe">Safe&ndash;Target</span></td></tr>
-        <tr><td class="tn">12</td><td><div class="tu">Copenhagen Business School</div><div class="tp">BSc International Business</div></td><td>Denmark</td><td>30</td><td>5 Mar 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">13</td><td><div class="tu">Chinese University of Hong Kong (CUHK)</div><div class="tp">Bachelor of Business Administration</div></td><td>Hong Kong</td><td>33&ndash;36</td><td>1 Mar 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">14</td><td><div class="tu">University of Amsterdam (UvA)</div><div class="tp">BSc Business Administration</div></td><td>Netherlands</td><td>32</td><td>15 Jan 2027</td><td><span class="target">Target</span></td></tr>
-        <tr><td class="tn">15</td><td><div class="tu">University of Durham</div><div class="tp">BA Business Management</div></td><td>UK</td><td>37</td><td>29 Jan 2027</td><td><span class="reach">Reach</span></td></tr>
-        <tr><td class="tn">16</td><td><div class="tu">University of Birmingham</div><div class="tp">BSc Business Management</div></td><td>UK</td><td>32</td><td>29 Jan 2027</td><td><span class="safe">Safe</span></td></tr>
-        <tr><td class="tn">17</td><td><div class="tu">University of Leeds</div><div class="tp">BSc Business Management</div></td><td>UK</td><td>33</td><td>29 Jan 2027</td><td><span class="safe">Safe</span></td></tr>
-        <tr><td class="tn">18</td><td><div class="tu">City University of Hong Kong (CityU)</div><div class="tp">BSc Business Administration</div></td><td>Hong Kong</td><td>30&ndash;33</td><td>31 Mar 2027</td><td><span class="safe">Safe&ndash;Target</span></td></tr>
-        <tr><td class="tn">19</td><td><div class="tu">Nanyang Technological University (NTU)</div><div class="tp">BSc Business</div></td><td>Singapore</td><td>37&ndash;40</td><td>19 Feb 2027</td><td><span class="reach">Reach</span></td></tr>
-        <tr><td class="tn">20</td><td><div class="tu">Loughborough University</div><div class="tp">BSc Business Management</div></td><td>UK</td><td>32</td><td>29 Jan 2027</td><td><span class="safe">Safe</span></td></tr>
-      </tbody>
-    </table>
   </div>
 </div>
 
