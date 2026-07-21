@@ -39,6 +39,19 @@
 html{scroll-behavior:smooth;font-size:16px;}
 body{background:var(--bg);color:var(--text);font-family:var(--fb);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 
+/* COLOR PALETTES */
+/* Gold (default) — prestige, business-formal */
+:root{--accent:#8A6B1A;--accent-l:#B89020;--accent-dim:rgba(138,107,26,0.10);--gold:#C8A84B;}
+@media(prefers-color-scheme:dark){:root{--accent:#C8A84B;--accent-l:#E0C068;--accent-dim:rgba(200,168,75,0.10);--gold:#C8A84B;}}
+:root[data-theme="dark"]{--accent:#C8A84B;--accent-l:#E0C068;--accent-dim:rgba(200,168,75,0.10);--gold:#C8A84B;}
+:root[data-theme="light"]{--accent:#8A6B1A;--accent-l:#B89020;--accent-dim:rgba(138,107,26,0.10);--gold:#C8A84B;}
+
+/* Blue — tech-forward, startup, modern */
+:root[data-palette="blue"]{--accent:#1D4ED8;--accent-l:#2563EB;--accent-dim:rgba(37,99,235,0.10);--gold:#3B82F6;}
+@media(prefers-color-scheme:dark){:root[data-palette="blue"]{--accent:#3B82F6;--accent-l:#60A5FA;--accent-dim:rgba(59,130,246,0.12);--gold:#60A5FA;}}
+:root[data-palette="blue"][data-theme="dark"]{--accent:#3B82F6;--accent-l:#60A5FA;--accent-dim:rgba(59,130,246,0.12);--gold:#60A5FA;}
+:root[data-palette="blue"][data-theme="light"]{--accent:#1D4ED8;--accent-l:#2563EB;--accent-dim:rgba(37,99,235,0.10);--gold:#2563EB;}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.85rem 2.5rem;background:var(--bg);border-bottom:1px solid transparent;transition:border-color .4s var(--ease);font-family:var(--fd);}
 nav.scrolled{border-bottom-color:var(--border);}
@@ -47,21 +60,65 @@ nav.scrolled{border-bottom-color:var(--border);}
 .nav-links{display:flex;gap:1.8rem;list-style:none;}
 .nav-links a{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-m);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--accent);}
-.theme-btn{background:none;border:1px solid var(--border);color:var(--text-m);padding:.26rem .52rem;border-radius:var(--r6);cursor:pointer;font-size:.7rem;font-family:var(--fd);transition:all .2s;}
-.theme-btn:hover{border-color:var(--accent);color:var(--accent);}
+.nav-controls{display:flex;gap:.5rem;align-items:center;}
+.theme-btn,.palette-btn{background:none;border:1px solid var(--border);color:var(--text-m);padding:.26rem .55rem;border-radius:var(--r6);cursor:pointer;font-size:.68rem;font-family:var(--fd);transition:all .2s;white-space:nowrap;}
+.theme-btn:hover,.palette-btn:hover{border-color:var(--accent);color:var(--accent);}
+.palette-btn{display:flex;align-items:center;gap:.35rem;}
+.palette-dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--accent);display:inline-block;}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 2.5rem 3rem;position:relative;overflow:hidden;}
-.hero-inner{max-width:1080px;width:100%;margin:0 auto;}
+.hero-inner{max-width:1080px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;}
+.hero-text{min-width:0;}
 .hero-kicker{font-family:var(--fd);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;display:flex;align-items:center;gap:.8rem;}
 .hero-kicker::before{content:'';width:2.5rem;height:1px;background:var(--accent);}
-.hero-name{font-family:var(--fd);font-size:clamp(3.8rem,11vw,9.5rem);font-weight:800;line-height:.88;letter-spacing:-.04em;color:var(--text);margin-bottom:2.5rem;}
+.hero-name{font-family:var(--fd);font-size:clamp(3.2rem,9vw,8rem);font-weight:800;line-height:.88;letter-spacing:-.04em;color:var(--text);margin-bottom:2.5rem;}
 .hero-name em{display:block;color:var(--accent);font-style:normal;}
-.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-m);max-width:50ch;margin-bottom:3.5rem;line-height:1.75;}
-.hero-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:4rem;}
+.hero-sub{font-size:clamp(1rem,2vw,1.15rem);color:var(--text-m);max-width:46ch;margin-bottom:3rem;line-height:1.75;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:0;}
 .pill{font-family:var(--fd);font-size:.72rem;letter-spacing:.06em;padding:.35rem .9rem;border:1px solid var(--border-str);border-radius:99px;color:var(--text-m);}
 .pill.gold{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);}
 .hero-deco{position:absolute;right:-2%;bottom:-5%;font-family:var(--fd);font-size:clamp(20rem,40vw,55rem);font-weight:900;line-height:1;color:var(--accent);opacity:.03;pointer-events:none;user-select:none;letter-spacing:-.05em;}
+/* HERO PHOTO */
+.hero-photo-wrap{
+  flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:1.2rem;
+}
+.hero-photo-ring{
+  width:clamp(200px,22vw,300px);height:clamp(200px,22vw,300px);
+  border-radius:50%;padding:4px;
+  background:conic-gradient(var(--accent) 0%,var(--accent-dim) 60%,var(--accent) 100%);
+  box-shadow:0 0 60px rgba(0,0,0,.15);
+  position:relative;
+}
+.hero-photo-ring img{
+  width:100%;height:100%;border-radius:50%;object-fit:cover;
+  display:block;
+  background:var(--bg-sub);
+}
+/* Placeholder shown when no real photo is set */
+.hero-photo-placeholder{
+  width:100%;height:100%;border-radius:50%;
+  background:var(--bg-sub);border:2px dashed var(--border-str);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.5rem;font-family:var(--fd);
+}
+.hero-photo-placeholder .initials{
+  font-size:clamp(2.5rem,6vw,4rem);font-weight:900;
+  color:var(--accent);letter-spacing:-.04em;line-height:1;
+}
+.hero-photo-placeholder .ph-label{
+  font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-f);text-align:center;padding:0 1rem;
+}
+.hero-photo-caption{
+  font-family:var(--fd);font-size:.65rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text-f);text-align:center;
+}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .hero-photo-wrap{flex-direction:row;justify-content:flex-start;}
+  .hero-photo-ring{width:120px;height:120px;}
+}
 
 /* STATS */
 .stats-strip{background:var(--bg-dark);color:#fff;padding:2.2rem 2.5rem;display:flex;justify-content:center;}
@@ -274,7 +331,12 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
     <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9728; / &#9790;</button>
+  <div class="nav-controls">
+    <button class="palette-btn" onclick="togglePalette()" aria-label="Switch colour theme">
+      <span class="palette-dot"></span><span id="palette-label">Gold</span>
+    </button>
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle light/dark">&#9728; / &#9790;</button>
+  </div>
 </nav>
 
 <!-- ============================================================
@@ -283,21 +345,42 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
 <div class="hero" id="top">
   <div class="hero-deco" aria-hidden="true">PS</div>
   <div class="hero-inner">
-    <!-- EDIT: The line under your name (school / year) -->
-    <div class="hero-kicker rv">IB Diploma &middot; Class of 2027 &middot; Shiv Nadar School, Noida</div>
-    <!-- EDIT: Your name — first line + surname on second line (em tag) -->
-    <h1 class="hero-name rv">Pritish<em>Sachdeva</em></h1>
-    <!-- EDIT: The short intro paragraph about yourself -->
-    <p class="hero-sub rv">I build things, compete, and think in systems. Co-founder of a tech company that placed 3rd nationally in the Czech Republic. Top 10 at an international challenge in Prague. All before finishing school.</p>
-    <!-- EDIT: These are the identity pills/labels. Add or remove <span> tags as needed -->
-    <div class="hero-pills rv">
-      <span class="pill gold">Entrepreneur</span>
-      <span class="pill gold">Technologist</span>
-      <span class="pill">IB Diploma Student</span>
-      <span class="pill">State-Level Athlete</span>
-      <span class="pill">Computer Science: 7/7</span>
-      <span class="pill">Delhi NCR, India</span>
+    <div class="hero-text">
+      <!-- EDIT: The line under your name (school / year) -->
+      <div class="hero-kicker rv">IB Diploma &middot; Class of 2027 &middot; Shiv Nadar School, Noida</div>
+      <!-- EDIT: Your name -->
+      <h1 class="hero-name rv">Pritish<em>Sachdeva</em></h1>
+      <!-- EDIT: Short intro paragraph -->
+      <p class="hero-sub rv">I build things, compete, and think in systems. Co-founder of a tech company that placed 3rd nationally in Czech Republic. Top 10 at an international challenge in Prague. All before finishing school.</p>
+      <!-- EDIT: Identity pills — add or remove <span> tags as needed -->
+      <div class="hero-pills rv">
+        <span class="pill gold">Entrepreneur</span>
+        <span class="pill gold">Technologist</span>
+        <span class="pill">IB Diploma Student</span>
+        <span class="pill">State-Level Athlete</span>
+        <span class="pill">CS: 7/7</span>
+        <span class="pill">Delhi NCR, India</span>
+      </div>
     </div>
+
+    <!-- PHOTO — EDIT: Replace the placeholder with your real photo.
+         Step 1: Upload your photo to the GitHub repo (drag & drop into the repo page).
+         Step 2: Note the filename, e.g. "pritish.jpg"
+         Step 3: Replace the entire .hero-photo-placeholder block below with:
+                 <img src="pritish.jpg" alt="Pritish Sachdeva">
+         The ring and styling apply automatically.
+    -->
+    <div class="hero-photo-wrap rv">
+      <div class="hero-photo-ring">
+        <!-- REPLACE THIS BLOCK WITH: <img src="your-photo.jpg" alt="Pritish Sachdeva"> -->
+        <div class="hero-photo-placeholder">
+          <span class="initials">PS</span>
+          <span class="ph-label">Add photo here</span>
+        </div>
+      </div>
+      <div class="hero-photo-caption">Pritish Sachdeva</div>
+    </div>
+
   </div>
 </div>
 
@@ -741,19 +824,33 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
 </footer>
 
 <script>
+/* ── LIGHT / DARK TOGGLE ── */
 function toggleTheme(){
   const r=document.documentElement;
   const cur=r.getAttribute('data-theme');
   const isDark=cur==='dark'||(!cur&&window.matchMedia('(prefers-color-scheme:dark)').matches);
   r.setAttribute('data-theme',isDark?'light':'dark');
 }
+
+/* ── COLOUR PALETTE TOGGLE (Gold ↔ Blue) ── */
+function togglePalette(){
+  const r=document.documentElement;
+  const isBlue=r.getAttribute('data-palette')==='blue';
+  r.setAttribute('data-palette',isBlue?'gold':'blue');
+  const lbl=document.getElementById('palette-label');
+  if(lbl) lbl.textContent=isBlue?'Gold':'Blue';
+}
+
+/* ── SCROLL NAV ── */
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
 },{passive:true});
+
+/* ── REVEAL ANIMATIONS ── */
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(!e.isIntersecting)return;
-    const parent=e.target.closest('.ach-grid,.grade-rows,.skills-grid,.ec-grid,.blog-grid,.clinks');
+    const parent=e.target.closest('.ach-grid,.grade-rows,.skills-grid,.ec-grid,.blog-grid,.clinks,.hero-inner');
     const delay=parent?Array.from(parent.querySelectorAll('.rv')).indexOf(e.target)*70:0;
     setTimeout(()=>e.target.classList.add('on'),Math.max(0,delay));
     obs.unobserve(e.target);
