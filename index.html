@@ -52,6 +52,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--fb);line-height:1.
 :root[data-palette="blue"][data-theme="dark"]{--accent:#3B82F6;--accent-l:#60A5FA;--accent-dim:rgba(59,130,246,0.12);--gold:#60A5FA;}
 :root[data-palette="blue"][data-theme="light"]{--accent:#1D4ED8;--accent-l:#2563EB;--accent-dim:rgba(37,99,235,0.10);--gold:#2563EB;}
 
+/* Sage — fresh, light, optimistic. Forces light backgrounds regardless of OS setting. */
+:root[data-palette="sage"]{
+  --bg:#F6FAF7;--bg-el:#FFFFFF;--bg-sub:#EBF4ED;--bg-dark:#1A2E20;
+  --border:rgba(0,0,0,0.07);--border-str:rgba(0,0,0,0.13);
+  --text:#142018;--text-m:#4A5E4F;--text-f:#8EA896;
+  --accent:#1A7F3C;--accent-l:#22A050;--accent-dim:rgba(26,127,60,0.10);--gold:#22A050;
+}
+/* Sage dark variant (if user also toggles dark) */
+:root[data-palette="sage"][data-theme="dark"]{
+  --bg:#0D1A10;--bg-el:#12221A;--bg-sub:#162A1E;--bg-dark:#0D1A10;
+  --border:rgba(255,255,255,0.07);--border-str:rgba(255,255,255,0.12);
+  --text:#E4F0E8;--text-m:#6A9278;--text-f:#2E4E38;
+  --accent:#34D058;--accent-l:#5AE07A;--accent-dim:rgba(52,208,88,0.12);--gold:#34D058;
+}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.85rem 2.5rem;background:var(--bg);border-bottom:1px solid transparent;transition:border-color .4s var(--ease);font-family:var(--fd);}
 nav.scrolled{border-bottom-color:var(--border);}
@@ -823,13 +838,18 @@ function toggleTheme(){
   r.setAttribute('data-theme',isDark?'light':'dark');
 }
 
-/* ── COLOUR PALETTE TOGGLE (Gold ↔ Blue) ── */
+/* ── COLOUR PALETTE TOGGLE (Gold → Blue → Sage → Gold) ── */
+const PALETTES=['gold','blue','sage'];
+const PALETTE_LABELS=['Gold','Blue','Sage'];
 function togglePalette(){
   const r=document.documentElement;
-  const isBlue=r.getAttribute('data-palette')==='blue';
-  r.setAttribute('data-palette',isBlue?'gold':'blue');
+  const cur=r.getAttribute('data-palette')||'gold';
+  const next=PALETTES[(PALETTES.indexOf(cur)+1)%PALETTES.length];
+  r.setAttribute('data-palette',next);
   const lbl=document.getElementById('palette-label');
-  if(lbl) lbl.textContent=isBlue?'Gold':'Blue';
+  if(lbl) lbl.textContent=PALETTE_LABELS[PALETTES.indexOf(next)];
+  /* Sage defaults to light — auto-apply light theme for best look */
+  if(next==='sage'&&!r.getAttribute('data-theme')) r.setAttribute('data-theme','light');
 }
 
 /* ── SCROLL NAV ── */
