@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pritish Sachdeva — Portfolio</title>
-<meta name="description" content="Portfolio of Pritish Sachdeva — IB student, entrepreneur, and technologist. Co-founder of Velin, Top 10 BATA Innovation Challenge Prague.">
+<meta name="description" content="Portfolio of Pritish Sachdeva — IB student, entrepreneur, and technologist.">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
@@ -47,7 +47,7 @@ nav.scrolled{border-bottom-color:var(--border);}
 .nav-links{display:flex;gap:1.8rem;list-style:none;}
 .nav-links a{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-m);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--accent);}
-.theme-btn{background:none;border:1px solid var(--border);color:var(--text-m);padding:.26rem .52rem;border-radius:var(--r6);cursor:pointer;font-size:.7rem;font-family:var(--fd);letter-spacing:.05em;transition:all .2s;}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--text-m);padding:.26rem .52rem;border-radius:var(--r6);cursor:pointer;font-size:.7rem;font-family:var(--fd);transition:all .2s;}
 .theme-btn:hover{border-color:var(--accent);color:var(--accent);}
 
 /* HERO */
@@ -92,7 +92,7 @@ nav.scrolled{border-bottom-color:var(--border);}
 .il{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-f);}
 .iv{font-size:.88rem;font-weight:500;color:var(--text);text-align:right;}
 
-/* FEATURED ACHIEVEMENTS */
+/* FEATURED */
 .feat{background:var(--bg-el);border:1px solid var(--border);border-radius:var(--r20);overflow:hidden;margin-bottom:2rem;}
 .feat-head{background:var(--bg-dark);padding:3rem 3.5rem;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;}
 .feat-head-deco{position:absolute;right:-1rem;top:-2rem;font-family:var(--fd);font-size:14rem;font-weight:900;line-height:1;color:var(--gold);opacity:.07;pointer-events:none;user-select:none;}
@@ -127,6 +127,19 @@ nav.scrolled{border-bottom-color:var(--border);}
 .ach-t{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.5rem;}
 .ach-d{font-size:.85rem;color:var(--text-m);line-height:1.65;}
 .ach-loc{margin-top:1.2rem;font-family:var(--fd);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-f);}
+
+/* GRADE-WISE ACHIEVEMENTS */
+.grade-band{margin-bottom:3rem;}
+.grade-label{
+  font-family:var(--fd);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-f);padding:.5rem 0;margin-bottom:1.2rem;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:.8rem;
+}
+.grade-label strong{
+  font-family:var(--fd);font-size:1.1rem;font-weight:800;
+  color:var(--accent);letter-spacing:-.02em;text-transform:none;
+}
 
 /* TIMELINE */
 .timeline{position:relative;padding-left:2rem;}
@@ -170,6 +183,26 @@ nav.scrolled{border-bottom-color:var(--border);}
 .tag{font-family:var(--fd);font-size:.76rem;padding:.3rem .8rem;border:1px solid var(--border);border-radius:99px;color:var(--text-m);transition:all .2s;cursor:default;}
 .tag:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);}
 
+/* EXTRACURRICULAR */
+.ec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;}
+.ec-card{background:var(--bg-el);border:1px solid var(--border);border-radius:var(--r12);padding:1.8rem;transition:border-color .2s,transform .2s var(--ease);}
+.ec-card:hover{border-color:var(--border-str);transform:translateY(-2px);}
+.ec-icon{font-size:2rem;margin-bottom:1rem;line-height:1;}
+.ec-t{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.4rem;}
+.ec-role{font-family:var(--fd);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;}
+.ec-d{font-size:.85rem;color:var(--text-m);line-height:1.65;}
+.ec-yr{margin-top:1rem;font-family:var(--fd);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-f);}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
+.blog-card{background:var(--bg-el);border:1px solid var(--border);border-radius:var(--r12);padding:2rem;transition:border-color .2s,transform .2s var(--ease);text-decoration:none;display:block;color:inherit;}
+.blog-card:hover{border-color:rgba(200,168,75,.35);transform:translateY(-3px);}
+.blog-date{font-family:var(--fd);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-f);margin-bottom:.8rem;}
+.blog-title{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.6rem;line-height:1.35;}
+.blog-excerpt{font-size:.85rem;color:var(--text-m);line-height:1.7;}
+.blog-tag{display:inline-block;margin-top:1.2rem;font-family:var(--fd);font-size:.65rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(138,107,26,.2);padding:.2rem .6rem;border-radius:99px;}
+.blog-soon{opacity:.45;cursor:default;}
+.blog-soon:hover{transform:none;border-color:var(--border);}
 
 /* CONTACT */
 .contact-wrap{background:var(--bg-dark);padding:7rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
@@ -189,7 +222,7 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
 /* REVEAL */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
 .rv.on{opacity:1;transform:none;}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;}.ach-card,.feat{transition:none;}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;}.ach-card,.feat,.ec-card,.blog-card{transition:none;}}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -212,25 +245,51 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
 </head>
 <body>
 
+<!-- ============================================================
+  HOW TO EDIT THIS WEBSITE
+  ============================================================
+  This is a plain HTML file. Every piece of content is clearly
+  labelled with a comment like:
+    <!-- EDIT: description of what to change -->
+
+  To edit:
+  1. Go to github.com/surabhidewra/pritish-sachdeva-profile
+  2. Click on index.html
+  3. Click the pencil icon (✏️) in the top right
+  4. Find the section you want to change (use Ctrl+F / Cmd+F)
+  5. Edit the text between the HTML tags
+  6. Scroll down → click "Commit changes"
+  7. The website updates automatically in ~1–2 minutes
+  ============================================================ -->
+
 <nav id="nav">
+  <!-- EDIT: Change the logo text if needed -->
   <a href="#top" class="nav-logo">Pritish <em>Sachdeva</em></a>
   <ul class="nav-links">
     <li><a href="#story">Story</a></li>
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#extracurricular">Extracurricular</a></li>
     <li><a href="#academics">Academics</a></li>
-
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9728; / &#9790;</button>
 </nav>
 
+<!-- ============================================================
+  HERO SECTION — the first thing people see
+  ============================================================ -->
 <div class="hero" id="top">
   <div class="hero-deco" aria-hidden="true">PS</div>
   <div class="hero-inner">
+    <!-- EDIT: The line under your name (school / year) -->
     <div class="hero-kicker rv">IB Diploma &middot; Class of 2027 &middot; Shiv Nadar School, Noida</div>
+    <!-- EDIT: Your name — first line + surname on second line (em tag) -->
     <h1 class="hero-name rv">Pritish<em>Sachdeva</em></h1>
+    <!-- EDIT: The short intro paragraph about yourself -->
     <p class="hero-sub rv">I build things, compete, and think in systems. Co-founder of a tech company that placed 3rd nationally in the Czech Republic. Top 10 at an international challenge in Prague. All before finishing school.</p>
+    <!-- EDIT: These are the identity pills/labels. Add or remove <span> tags as needed -->
     <div class="hero-pills rv">
       <span class="pill gold">Entrepreneur</span>
       <span class="pill gold">Technologist</span>
@@ -242,6 +301,7 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
   </div>
 </div>
 
+<!-- EDIT: The 4 big numbers in the dark stats strip -->
 <div class="stats-strip">
   <div class="stats-inner">
     <div class="sstat"><div class="sstat-n">3<sub>rd</sub></div><div class="sstat-l">JA Czech National</div></div>
@@ -251,18 +311,22 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
   </div>
 </div>
 
-<!-- STORY -->
+<!-- ============================================================
+  STORY / ABOUT SECTION
+  ============================================================ -->
 <div class="section" id="story">
   <div class="eye rv">The Story</div>
   <div class="intro-grid">
     <div class="rv">
       <h2 class="sh">Not just a student.<br>A builder who studies.</h2>
+      <!-- EDIT: The 3 paragraphs of your bio/story -->
       <div class="intro-body">
         <p>Most people my age are learning about entrepreneurship through textbooks and case studies. I was doing it in real time &mdash; <strong>co-founding Velin</strong>, navigating a live market, managing a team, and pitching to judges in a country I&rsquo;d never been to before.</p>
         <p>That experience &mdash; winning 3rd nationally in the JA Czech Company Competition and finishing <strong>Top 10 at the BATA Shoe Innovation Challenge in Prague</strong> &mdash; didn&rsquo;t happen because I studied entrepreneurship. It happened because I treated every problem like a system to understand and an edge to find.</p>
         <p>The same mindset drives my Computer Science work (grade <em>7</em>), my state-level badminton, and the Economics Extended Essay I&rsquo;m developing now. I don&rsquo;t separate &ldquo;school&rdquo; from &ldquo;real world.&rdquo; They&rsquo;re the same thing to me.</p>
       </div>
     </div>
+    <!-- EDIT: The quick facts table on the right. Change the .iv values -->
     <div class="rv">
       <div class="ifact"><span class="il">Currently</span><span class="iv">IB Diploma Year 1 (DP1)</span></div>
       <div class="ifact"><span class="il">School</span><span class="iv">Shiv Nadar School, Noida</span></div>
@@ -280,12 +344,15 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
 
 <hr class="rule">
 
-<!-- VENTURES -->
+<!-- ============================================================
+  VENTURES SECTION — detailed cards for Velin & BATA
+  ============================================================ -->
 <div class="section" id="ventures">
   <div class="eye rv">Ventures &amp; Entrepreneurship</div>
   <h2 class="sh rv">I didn&rsquo;t wait for<br>a case study.</h2>
   <p class="ssub rv">Two international competitions. One active company. All before turning 18.</p>
 
+  <!-- EDIT: Velin card — change rank, title, location, story paragraphs, and meta fields -->
   <div class="feat rv">
     <div class="feat-head">
       <div class="feat-head-deco" aria-hidden="true">3</div>
@@ -301,7 +368,7 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
       <div class="feat-story">
         <h4>What happened</h4>
         <p>I co-founded <strong>Velin</strong> &mdash; a student-led technology company built within the Junior Achievement (JA) programme in Czech Republic. What started as a competition entry became a real operating business.</p>
-        <p>We competed in the JA Czech Company Competition against student ventures from across the country and <strong>secured 3rd place nationally</strong>. More significantly, Velin didn&rsquo;t dissolve when the competition ended &mdash; it continues to operate today, which puts it in a rare category among student ventures.</p>
+        <p>We competed in the JA Czech Company Competition against student ventures from across the country and <strong>secured 3rd place nationally</strong>. More significantly, Velin didn&rsquo;t dissolve when the competition ended &mdash; it continues to operate today.</p>
         <p>Running Velin gave me hands-on experience in <strong>business strategy, financial modelling, product development, and team leadership</strong> that no classroom could replicate.</p>
       </div>
       <div class="feat-meta">
@@ -315,6 +382,7 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
     <div class="feat-status">Velin is currently operational &mdash; the company continues beyond the competition</div>
   </div>
 
+  <!-- EDIT: BATA card — same structure, edit text as needed -->
   <div class="feat rv">
     <div class="feat-head">
       <div class="feat-head-deco" aria-hidden="true">10</div>
@@ -330,14 +398,14 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
       <div class="feat-story">
         <h4>What happened</h4>
         <p>The <strong>BATA Shoe Innovation Challenge</strong> is an international product innovation competition hosted by BATA &mdash; one of the world&rsquo;s largest footwear companies, operating in 70+ countries.</p>
-        <p>I developed a <strong>commercially viable product concept</strong> incorporating structured market research, cost-benefit analysis, manufacturing considerations, and a full investor-style pitch. The challenge wasn&rsquo;t just about the idea &mdash; it was about making the idea defensible in front of a real business audience.</p>
-        <p>Finishing in the <strong>Top 10 globally</strong> against an international field was validation that the business thinking I had developed through Velin could stand up on a world stage.</p>
+        <p>I developed a <strong>commercially viable product concept</strong> incorporating structured market research, cost-benefit analysis, manufacturing considerations, and a full investor-style pitch.</p>
+        <p>Finishing in the <strong>Top 10 globally</strong> against an international field validated that the business thinking developed through Velin could stand up on a world stage.</p>
       </div>
       <div class="feat-meta">
         <div><div class="fmeta-label">Host</div><div class="fmeta-val">BATA &mdash; Global Footwear Company</div></div>
         <div><div class="fmeta-label">Result</div><div class="fmeta-val">Top 10 Internationally</div></div>
         <div><div class="fmeta-label">Location</div><div class="fmeta-val">Prague, Czech Republic</div></div>
-        <div><div class="fmeta-label">Deliverable</div><div class="fmeta-val">Product Concept &middot; Market Research &middot; Cost Analysis &middot; Investor Pitch</div></div>
+        <div><div class="fmeta-label">Deliverable</div><div class="fmeta-val">Product Concept &middot; Market Research &middot; Cost Analysis &middot; Pitch</div></div>
         <div><div class="fmeta-label">Skills Gained</div><div class="fmeta-val">Product Innovation &middot; Market Research &middot; Commercial Pitching</div></div>
       </div>
     </div>
@@ -346,117 +414,216 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
 
 <hr class="rule">
 
-<!-- ACHIEVEMENTS -->
+<!-- ============================================================
+  ACHIEVEMENTS — GRADE-WISE
+  To add an achievement: copy one <div class="ach-card rv"> block,
+  paste it inside the right grade-band, and fill in your details.
+  To add a new grade band: copy a <div class="grade-band"> block.
+  ============================================================ -->
 <div class="section" id="achievements">
-  <div class="eye rv">All Achievements</div>
-  <h2 class="sh rv">Every milestone,<br>earned.</h2>
-  <p class="ssub rv">From innovation camps in Europe to state-level sport &mdash; a complete record of what Pritish has built and won.</p>
+  <div class="eye rv">Achievements</div>
+  <h2 class="sh rv">Every milestone,<br>grade by grade.</h2>
+  <p class="ssub rv">A complete record of awards, competitions, and recognitions — organised by school year so the progression is clear.</p>
 
-  <div class="ach-grid" style="margin-bottom:4rem;">
-    <div class="ach-card rv">
-      <div class="ach-icon">&#127942;</div>
-      <div class="ach-num">3<em>rd</em></div>
-      <div class="ach-t">JA Czech National Competition</div>
-      <div class="ach-d">Nationally ranked in the Junior Achievement Czech Republic Company of the Year competition. Velin placed 3rd out of companies from across the country.</div>
-      <div class="ach-loc">Czech Republic &middot; 2025</div>
-    </div>
-    <div class="ach-card rv">
-      <div class="ach-icon">&#127760;</div>
-      <div class="ach-num">Top<em> 10</em></div>
-      <div class="ach-t">BATA Global Innovation Challenge</div>
-      <div class="ach-d">Finished in the global Top 10 at the BATA Shoe Innovation Challenge in Prague &mdash; a product innovation competition with international participation.</div>
-      <div class="ach-loc">Prague, Czech Republic &middot; 2025</div>
-    </div>
-    <div class="ach-card rv">
-      <div class="ach-icon">&#128161;</div>
-      <div class="ach-num">Liberec</div>
-      <div class="ach-t">Cross-National Innovation Camp</div>
-      <div class="ach-d">Participated in the Liberec Innovation Camp &mdash; a cross-national programme focused on applied problem-solving and collaborative product design with peers from multiple countries.</div>
-      <div class="ach-loc">Liberec, Czech Republic &middot; 2025</div>
-    </div>
-    <div class="ach-card rv">
-      <div class="ach-icon">&#127992;</div>
-      <div class="ach-num">State<em> Level</em></div>
-      <div class="ach-t">Badminton &mdash; Uttar Pradesh</div>
-      <div class="ach-d">Represented Uttar Pradesh at state-level badminton competitions. Years of dedicated training demonstrating discipline, physical commitment, and competitive resilience.</div>
-      <div class="ach-loc">Uttar Pradesh, India &middot; 2025</div>
-    </div>
-    <div class="ach-card rv">
-      <div class="ach-icon">&#128187;</div>
-      <div class="ach-num">7<em>/7</em></div>
-      <div class="ach-t">Computer Science &mdash; IB Maximum</div>
-      <div class="ach-d">Achieved the maximum possible grade (7/7) in IB Computer Science. Strong Python programming with well-structured, logical problem-solving throughout all assessments.</div>
-      <div class="ach-loc">Shiv Nadar School, Noida &middot; DP1 2026</div>
-    </div>
-    <div class="ach-card rv">
-      <div class="ach-icon">&#128218;</div>
-      <div class="ach-num">91<em>%</em></div>
-      <div class="ach-t">Grade 10 CBSE Board Examinations</div>
-      <div class="ach-d">Scored 91% in the CBSE Board Examinations at Grade 10, establishing a strong academic baseline before transitioning to the IB Diploma Programme.</div>
-      <div class="ach-loc">CBSE Board &middot; 2024</div>
+  <!-- ── GRADE 8 ── -->
+  <!-- EDIT: Add Grade 8 achievements inside this block. Delete this block if nothing to show yet. -->
+  <div class="grade-band rv">
+    <div class="grade-label"><strong>Grade 8</strong> &nbsp;2022&ndash;23</div>
+    <div class="ach-grid">
+      <!-- COPY THIS BLOCK TO ADD AN ACHIEVEMENT -->
+      <div class="ach-card">
+        <div class="ach-icon">&#127942;</div>
+        <!-- EDIT: The big number/word (e.g. "1st", "Gold", "Top 5") -->
+        <div class="ach-num">Add<em> Here</em></div>
+        <!-- EDIT: The title of the achievement -->
+        <div class="ach-t">Achievement Title</div>
+        <!-- EDIT: A short description of what happened -->
+        <div class="ach-d">Describe the achievement here — what it was, what you did, and why it matters.</div>
+        <!-- EDIT: Where and when -->
+        <div class="ach-loc">Location &middot; Year</div>
+      </div>
+      <!-- Add more <div class="ach-card"> blocks here for Grade 8 -->
     </div>
   </div>
 
-  <div class="eye rv">Journey Timeline</div>
-  <h3 class="sh rv" style="font-size:1.8rem;margin-bottom:2.5rem;">How it all connects</h3>
-  <div class="timeline rv">
-    <div class="titem gold-dot">
-      <div class="tyear">2024</div>
-      <div class="tt">CBSE Grade 10 &mdash; 91%</div>
-      <div class="td">Completed secondary school with 91% in the CBSE Board Examinations. Began the IB Diploma Programme at Shiv Nadar School, Noida.</div>
+  <!-- ── GRADE 9 ── -->
+  <!-- EDIT: Add Grade 9 achievements here -->
+  <div class="grade-band rv">
+    <div class="grade-label"><strong>Grade 9</strong> &nbsp;2023&ndash;24</div>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div class="ach-icon">&#11088;</div>
+        <div class="ach-num">Add<em> Here</em></div>
+        <div class="ach-t">Achievement Title</div>
+        <div class="ach-d">Describe the achievement here — what it was, what you did, and why it matters.</div>
+        <div class="ach-loc">Location &middot; Year</div>
+      </div>
     </div>
-    <div class="titem gold-dot">
-      <div class="tyear">2025</div>
-      <div class="tt">Co-Founded Velin &mdash; JA Czech Republic</div>
-      <div class="td">Co-founded a student tech company through the Junior Achievement programme in Czech Republic. Managed strategy, product development, and team leadership across an active business operation.</div>
+  </div>
+
+  <!-- ── GRADE 10 ── -->
+  <!-- EDIT: Add or update Grade 10 achievements. One is pre-filled (CBSE result). -->
+  <div class="grade-band rv">
+    <div class="grade-label"><strong>Grade 10</strong> &nbsp;2023&ndash;24</div>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div class="ach-icon">&#128218;</div>
+        <div class="ach-num">91<em>%</em></div>
+        <div class="ach-t">CBSE Board Examinations</div>
+        <div class="ach-d">Scored 91% in the CBSE Board Examinations, establishing a strong academic baseline before transitioning to the IB Diploma Programme.</div>
+        <div class="ach-loc">CBSE Board &middot; 2024</div>
+      </div>
+      <!-- Add more Grade 10 achievements here -->
     </div>
-    <div class="titem gold-dot">
-      <div class="tyear">2025</div>
-      <div class="tt">3rd Place Nationally &mdash; JA Czech Company Competition</div>
-      <div class="td">Velin placed 3rd nationally in the JA Czech Company of the Year Competition, competing against student ventures from across the country.</div>
+  </div>
+
+  <!-- ── GRADE 11 / IB DP1 ── -->
+  <!-- EDIT: These are pre-filled from Pritish's actual achievements. Edit or add more. -->
+  <div class="grade-band rv">
+    <div class="grade-label"><strong>Grade 11 &mdash; IB DP1</strong> &nbsp;2024&ndash;25</div>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div class="ach-icon">&#127942;</div>
+        <div class="ach-num">3<em>rd</em></div>
+        <div class="ach-t">JA Czech National Company Competition</div>
+        <div class="ach-d">Co-founded Velin and placed 3rd nationally in the Junior Achievement Czech Republic Company of the Year competition.</div>
+        <div class="ach-loc">Czech Republic &middot; 2025</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">&#127760;</div>
+        <div class="ach-num">Top<em> 10</em></div>
+        <div class="ach-t">BATA Global Innovation Challenge</div>
+        <div class="ach-d">Finished Top 10 internationally at the BATA Shoe Innovation Challenge in Prague — a product innovation competition with global participation.</div>
+        <div class="ach-loc">Prague, Czech Republic &middot; 2025</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">&#128161;</div>
+        <div class="ach-num">Liberec</div>
+        <div class="ach-t">Cross-National Innovation Camp</div>
+        <div class="ach-d">Participated in the Liberec Innovation Camp — a cross-national programme focused on collaborative product design with peers from multiple countries.</div>
+        <div class="ach-loc">Liberec, Czech Republic &middot; 2025</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">&#127992;</div>
+        <div class="ach-num">State<em> Level</em></div>
+        <div class="ach-t">Badminton &mdash; Uttar Pradesh</div>
+        <div class="ach-d">Represented Uttar Pradesh at state-level badminton competitions alongside academic and entrepreneurial commitments.</div>
+        <div class="ach-loc">Uttar Pradesh, India &middot; 2025</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">&#128187;</div>
+        <div class="ach-num">7<em>/7</em></div>
+        <div class="ach-t">Computer Science &mdash; IB Maximum Grade</div>
+        <div class="ach-d">Achieved the maximum possible grade (7/7) in IB Computer Science with strong Python programming and well-structured problem-solving.</div>
+        <div class="ach-loc">Shiv Nadar School, Noida &middot; 2026</div>
+      </div>
+      <!-- Add more Grade 11 achievements here -->
     </div>
-    <div class="titem gold-dot">
-      <div class="tyear">2025</div>
-      <div class="tt">Top 10 Globally &mdash; BATA Shoe Innovation Challenge, Prague</div>
-      <div class="td">Finished Top 10 internationally at the BATA Innovation Challenge in Prague, presenting a commercially viable product concept to an international panel of judges.</div>
-    </div>
-    <div class="titem gold-dot">
-      <div class="tyear">2025</div>
-      <div class="tt">Liberec Innovation Camp &mdash; Czech Republic</div>
-      <div class="td">Participated in a cross-national innovation camp focused on collaborative product design and applied problem-solving with international peers.</div>
-    </div>
-    <div class="titem gold-dot">
-      <div class="tyear">2025</div>
-      <div class="tt">State-Level Badminton &mdash; Uttar Pradesh</div>
-      <div class="td">Represented Uttar Pradesh at state-level badminton competitions alongside demanding academic and entrepreneurial commitments.</div>
-    </div>
-    <div class="titem">
-      <div class="tyear">2026 &mdash; Now</div>
-      <div class="tt">IB Diploma Year 1 &mdash; DP1 (35/42 Term 2)</div>
-      <div class="td">Completing IB Diploma Year 1 with a 35/42 score. Strong performance in CS (7), Hindi B (7), Business Management HL (6), and Mathematics HL (6). Extended Essay in Economics on track.</div>
-    </div>
-    <div class="titem">
-      <div class="tyear">Sep 2026 &rarr; May 2027</div>
-      <div class="tt">IB Diploma Year 2 + University Applications</div>
-      <div class="td">Beginning DP2 in September 2026 while applying to 20 target universities across UK, Europe, Hong Kong, and Singapore for September 2027 entry.</div>
-    </div>
-    <div class="titem">
-      <div class="tyear">Jul 2027</div>
-      <div class="tt">IB Results &rarr; University Entry</div>
-      <div class="td">IB Final Exams May 2027. Results on 6 July 2027. University commencement September 2027.</div>
+  </div>
+
+  <!-- ── GRADE 12 / IB DP2 — fill in as achievements happen ── -->
+  <!-- EDIT: Leave empty for now, or delete this block until Grade 12 begins -->
+  <div class="grade-band rv">
+    <div class="grade-label"><strong>Grade 12 &mdash; IB DP2</strong> &nbsp;2025&ndash;26 &nbsp;<span style="opacity:.45;font-size:.9em;">(Upcoming)</span></div>
+    <div class="ach-grid">
+      <div class="ach-card" style="opacity:.4;border-style:dashed;">
+        <div class="ach-icon">&#8987;</div>
+        <div class="ach-num" style="font-size:1.4rem;color:var(--text-f);">Coming</div>
+        <div class="ach-t" style="color:var(--text-m);">Add achievements as they happen</div>
+        <div class="ach-d">Copy the card template from a grade above and paste it here when you have a new achievement to add.</div>
+        <div class="ach-loc">2026&ndash;27</div>
+      </div>
     </div>
   </div>
 </div>
 
 <hr class="rule">
 
-<!-- ACADEMICS -->
+<!-- ============================================================
+  EXTRACURRICULAR SECTION
+  To add an activity: copy one <div class="ec-card rv"> block.
+  ============================================================ -->
+<div class="section" id="extracurricular">
+  <div class="eye rv">Extracurricular</div>
+  <h2 class="sh rv">Beyond the<br>classroom.</h2>
+  <p class="ssub rv">Sports, clubs, community projects, and everything in between.</p>
+
+  <div class="ec-grid">
+
+    <!-- EDIT: Badminton card -->
+    <div class="ec-card rv">
+      <div class="ec-icon">&#127992;</div>
+      <div class="ec-t">Badminton</div>
+      <div class="ec-role">State Level &mdash; Uttar Pradesh</div>
+      <!-- EDIT: Description of your involvement -->
+      <div class="ec-d">Represented Uttar Pradesh at state-level badminton competitions. Years of dedicated training developing discipline, focus, and competitive resilience.</div>
+      <!-- EDIT: Year or date range -->
+      <div class="ec-yr">2020 &mdash; Present</div>
+    </div>
+
+    <!-- EDIT: Enterprise Club card -->
+    <div class="ec-card rv">
+      <div class="ec-icon">&#128200;</div>
+      <div class="ec-t">Enterprise Club</div>
+      <div class="ec-role">Member</div>
+      <div class="ec-d">Participated in the school&rsquo;s enterprise and business club, developing entrepreneurial thinking, pitching skills, and commercial problem-solving.</div>
+      <div class="ec-yr">Shiv Nadar School, Noida</div>
+    </div>
+
+    <!-- EDIT: MUN card -->
+    <div class="ec-card rv">
+      <div class="ec-icon">&#127758;</div>
+      <div class="ec-t">Model United Nations (MUN)</div>
+      <div class="ec-role">Delegate</div>
+      <!-- EDIT: Add specific MUNs attended, awards won, committees -->
+      <div class="ec-d">Participated as a delegate in Model United Nations conferences, debating global policy issues, practising public speaking, and building research skills.</div>
+      <div class="ec-yr">Shiv Nadar School</div>
+    </div>
+
+    <!-- EDIT: International Societies card -->
+    <div class="ec-card rv">
+      <div class="ec-icon">&#127775;</div>
+      <div class="ec-t">International Societies</div>
+      <div class="ec-role">Active Member</div>
+      <div class="ec-d">Engaged with international student networks and cross-cultural programmes through school and the Junior Achievement Czech Republic experience.</div>
+      <div class="ec-yr">2024 &mdash; Present</div>
+    </div>
+
+    <!-- EDIT: Project Tierra (CAS) card -->
+    <div class="ec-card rv">
+      <div class="ec-icon">&#127807;</div>
+      <div class="ec-t">Project Tierra</div>
+      <div class="ec-role">IB CAS Project</div>
+      <!-- EDIT: Add details about what Project Tierra involved -->
+      <div class="ec-d">Community and environmental project undertaken as part of the IB CAS (Creativity, Activity, Service) requirement. Details to be added.</div>
+      <div class="ec-yr">IB Diploma &mdash; CAS</div>
+    </div>
+
+    <!-- COPY THIS BLOCK TO ADD MORE EXTRACURRICULAR ACTIVITIES
+    <div class="ec-card rv">
+      <div class="ec-icon">EMOJI</div>
+      <div class="ec-t">Activity Name</div>
+      <div class="ec-role">Your Role</div>
+      <div class="ec-d">Description of what you did and what you learned.</div>
+      <div class="ec-yr">Year or school name</div>
+    </div>
+    -->
+
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- ============================================================
+  ACADEMICS SECTION
+  ============================================================ -->
 <div class="section" id="academics">
   <div class="eye rv">Academics</div>
   <h2 class="sh rv">IB Diploma &mdash;<br>Subject by Subject</h2>
   <p class="ssub rv">IB grades run 1&ndash;7. Maximum total is 45 (42 from subjects + 3 from TOK/Extended Essay bonus).</p>
 
   <div class="grades-layout">
+    <!-- EDIT: Change the grade number (g7/g6/g5/g4 = colour), subject name, and level -->
     <div class="grade-rows rv">
       <div class="gr"><div class="gr-n g7">7</div><div class="gr-info"><div class="gr-sub">Computer Science</div><div class="gr-lv">Standard Level (SL)</div></div><div class="gr-bar-wrap"><div class="gr-bar g7" style="width:100%"></div></div></div>
       <div class="gr"><div class="gr-n g7">7</div><div class="gr-info"><div class="gr-sub">Hindi B</div><div class="gr-lv">Standard Level (SL)</div></div><div class="gr-bar-wrap"><div class="gr-bar g7" style="width:100%"></div></div></div>
@@ -466,10 +633,12 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
       <div class="gr"><div class="gr-n g4">4</div><div class="gr-info"><div class="gr-sub">English Language &amp; Literature</div><div class="gr-lv">Standard Level (SL)</div></div><div class="gr-bar-wrap"><div class="gr-bar g4" style="width:57%"></div></div></div>
     </div>
     <div class="grades-aside rv">
+      <!-- EDIT: Update total score and label when DP2 results come in -->
       <div class="tot-box">
         <div class="tot-n">35<span>/42</span></div>
         <div class="tot-l">Current DP1 Score &mdash; Term 2</div>
       </div>
+      <!-- EDIT: Update EE status, subject, and supervisor as it progresses -->
       <div class="info-box">
         <div class="ib-label">Extended Essay</div>
         <div class="ib-val">Economics</div>
@@ -478,7 +647,7 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
       <div class="info-box">
         <div class="ib-label">Core Strengths</div>
         <div class="ib-val">Quantitative &amp; Technical</div>
-        <div class="ib-note">CS 7 + Math HL 6 + BM HL 6 &mdash; a combination specifically valued by business and technology programmes globally.</div>
+        <div class="ib-note">CS 7 + Math HL 6 + BM HL 6 &mdash; a combination valued by business and technology programmes globally.</div>
       </div>
       <div class="info-box">
         <div class="ib-label">Target Range (DP2)</div>
@@ -491,54 +660,82 @@ footer{padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-it
 
 <hr class="rule">
 
-<!-- SKILLS -->
-<div class="section">
-  <div class="eye rv">Skills &amp; Activities</div>
-  <h2 class="sh rv">What I bring<br>to the table</h2>
-  <div class="skills-grid rv" style="margin-bottom:0;">
-    <div class="skill-group">
-      <div class="sg-title">Technical</div>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">Logical Thinking</span><span class="tag">Data Analysis</span><span class="tag">Problem-Solving</span><span class="tag">Computational Thinking</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="sg-title">Business &amp; Entrepreneurship</div>
-      <div class="tags">
-        <span class="tag">Business Strategy</span><span class="tag">Market Research</span><span class="tag">Financial Planning</span><span class="tag">Product Development</span><span class="tag">Investor Pitching</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="sg-title">Leadership &amp; Collaboration</div>
-      <div class="tags">
-        <span class="tag">Team Leadership</span><span class="tag">Cross-Cultural Teamwork</span><span class="tag">Public Speaking</span><span class="tag">Decision-Making</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="sg-title">Extracurricular</div>
-      <div class="tags">
-        <span class="tag">Enterprise Club</span><span class="tag">Model United Nations</span><span class="tag">International Societies</span><span class="tag">Project Tierra (CAS)</span><span class="tag">Badminton</span>
-      </div>
-    </div>
+<!-- ============================================================
+  BLOG SECTION
+  To add a new post: copy one <a class="blog-card rv"> block,
+  remove the "blog-soon" class, and fill in your content.
+  To link to a real article: change href="#" to the URL.
+  ============================================================ -->
+<div class="section" id="blog">
+  <div class="eye rv">Blog</div>
+  <h2 class="sh rv">Thinking out<br>loud.</h2>
+  <p class="ssub rv">Essays, reflections, and ideas from building a company, competing internationally, and navigating the IB.</p>
+
+  <div class="blog-grid">
+
+    <!-- EDIT: When you write your first post, replace this placeholder.
+         1. Remove class "blog-soon" from the <a> tag
+         2. Change href="#" to your article URL (or keep # if it's on this page)
+         3. Update the date, title, excerpt, and tag -->
+    <a href="#" class="blog-card blog-soon rv">
+      <!-- EDIT: Date of post e.g. "July 2026" -->
+      <div class="blog-date">Coming Soon</div>
+      <!-- EDIT: Title of your article -->
+      <div class="blog-title">What it actually felt like to run a company at 16</div>
+      <!-- EDIT: 1–2 sentence teaser -->
+      <div class="blog-excerpt">The gap between what entrepreneurship looks like on paper and what it feels like when you&rsquo;re doing it with real money, real teammates, and a real deadline.</div>
+      <!-- EDIT: Category label e.g. "Entrepreneurship", "IB Life", "Reflections" -->
+      <div class="blog-tag">Entrepreneurship</div>
+    </a>
+
+    <a href="#" class="blog-card blog-soon rv">
+      <div class="blog-date">Coming Soon</div>
+      <div class="blog-title">Competing at BATA in Prague: a step-by-step breakdown</div>
+      <div class="blog-excerpt">From the first idea sketch to standing in front of judges in Czech Republic &mdash; everything I learned about pitching a product to a global company.</div>
+      <div class="blog-tag">Competitions</div>
+    </a>
+
+    <a href="#" class="blog-card blog-soon rv">
+      <div class="blog-date">Coming Soon</div>
+      <div class="blog-title">How I think about the IB Extended Essay</div>
+      <div class="blog-excerpt">Writing 4,000 words on Economics when you&rsquo;ve never written a research paper before. The process, the panic, and the unexpected parts I actually enjoyed.</div>
+      <div class="blog-tag">IB Life</div>
+    </a>
+
+    <!-- COPY THIS BLOCK to add a real published post:
+    <a href="YOUR-ARTICLE-URL-HERE" class="blog-card rv">
+      <div class="blog-date">Month Year</div>
+      <div class="blog-title">Your Article Title Here</div>
+      <div class="blog-excerpt">A sentence or two summarising what the article is about.</div>
+      <div class="blog-tag">Category</div>
+    </a>
+    -->
+
   </div>
 </div>
 
+<!-- ============================================================
+  CONTACT SECTION
+  ============================================================ -->
 <div class="contact-wrap" id="contact">
   <div class="contact-deco" aria-hidden="true">PS</div>
   <div class="contact-inner">
     <div class="contact-kicker rv">Get in touch</div>
     <h2 class="contact-h rv">Let&rsquo;s<br>connect.</h2>
+    <!-- EDIT: The tagline under the heading -->
     <p class="contact-sub rv">Open to conversations about universities, internships, and interesting problems worth solving.</p>
     <div class="clinks rv">
+      <!-- EDIT: Replace with your actual email, phone, and LinkedIn URL -->
       <a href="mailto:pritishsachdeva14@gmail.com" class="clink"><span class="clink-ic">&#9993;</span>pritishsachdeva14@gmail.com</a>
       <a href="tel:+918448222888" class="clink"><span class="clink-ic">&#9990;</span>+91 844 822 2888</a>
-      <a href="#" class="clink"><span class="clink-ic" style="font-size:.75rem;font-weight:700;">in</span>linkedin.com/in/pritishsachdeva</a>
+      <a href="https://linkedin.com/in/pritishsachdeva" class="clink"><span class="clink-ic" style="font-size:.75rem;font-weight:700;">in</span>linkedin.com/in/pritishsachdeva</a>
       <a href="#" class="clink"><span class="clink-ic">&#127760;</span>pritishsachdeva.com <span style="font-size:.72rem;opacity:.4;margin-left:.3rem;">(coming soon)</span></a>
     </div>
   </div>
 </div>
 
 <footer>
+  <!-- EDIT: Update year if needed -->
   <span>Pritish Sachdeva &middot; IB Diploma &middot; Shiv Nadar School, Noida &middot; Delhi NCR, India</span>
   <span>&copy; 2026</span>
 </footer>
@@ -556,7 +753,7 @@ window.addEventListener('scroll',()=>{
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(!e.isIntersecting)return;
-    const parent=e.target.closest('.ach-grid,.grade-rows,.skills-grid,.timeline,.clinks');
+    const parent=e.target.closest('.ach-grid,.grade-rows,.skills-grid,.ec-grid,.blog-grid,.clinks');
     const delay=parent?Array.from(parent.querySelectorAll('.rv')).indexOf(e.target)*70:0;
     setTimeout(()=>e.target.classList.add('on'),Math.max(0,delay));
     obs.unobserve(e.target);
